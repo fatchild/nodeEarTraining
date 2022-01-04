@@ -1,0 +1,68 @@
+<!DOCTYPE html> <!--HTML5 DOCTYPE-->
+<html lang="en">
+  <head>
+    <title>Ear Trainer</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--viewport for mobile first design-->
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👂</text></svg>" />
+
+    <link rel="stylesheet" type="text/css" href="./css/eartrainer.css" />
+    <script src="./app/games/lowMidHigh.js" defer type="module"></script>
+
+    <!-- INCLUDE Bootstrap 4 from a CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <h1 class="display-3">Ear Trainer</h1>
+        </div>
+        <div class="jumbotron">
+            <div id="freqeuncy-guesser">
+                <div class="d-flex flex-column mb-0">
+                    <h2 class="m-auto pb-3" id="">Frequency band guesser</h2>
+                    <p class="m-auto pb-3">Guess which general band the frequency played is part of.</p>
+                    <div class="d-flex justify-content-center mb-3">
+                        <div onclick="play()" class="btn btn-primary">play frequency (sine wave)</div>
+                        <!-- <div onclick="resetFrequency()" class="btn btn-info">Another frequency</div> -->
+                    </div>
+                    <div class="badge badge-secondary m-auto" id="scoreDisplay">0/0</div>
+                </div>
+                <div class="row gx-3">
+                    <div id="low" onclick="guess('low')" class="col-sm m-3 py-5 btn btn-danger">
+                        <h4>LOW</h4>
+                        <p>∞ &#60; x &#60; 250Hz</p>
+                    </div>
+                    <div id="mid" onclick="guess('mid')" class="col-sm m-3 py-5 btn btn-warning">
+                        <h4>MID</h4>
+                        <p>250Hz &#60; x &#60; 4kHz</p>
+                    </div>
+                    <div id="high" onclick="guess('high')" class="col-sm m-3 py-5 btn btn-success">
+                        <h4>HIGH</h4>
+                        <p>4kHz &#60; x &#60; 16kHz+</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mb-3">
+                    <div>Volume: </div>
+                </div>
+                <div class="slidecontainer d-flex justify-content-center pt-5">
+                    <div class="">Gain (volume): </div>
+                    <div class="p-1"><input type="range" min="0" max="100" value="8" class="slider" id="gainInput"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  </body>
+</html>
+<footer>
+  <p class="pl-4 py-0">v1.0.0<a href="https://github.com/fatchild"><img class="ml-2" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="20"></img></a></p>
+</footer>
